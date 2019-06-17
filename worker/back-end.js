@@ -12,7 +12,7 @@ export default class BackEnd {
     start() {
         this.stop();
         this.interval = setInterval(() => this.sendTick(), 1000);
-        this.socket = new WebSocket('ws://localhost:4000');
+        this.socket = new WebSocket(`ws://${location.host}/api/random`);
 
         this.socket.addEventListener('message', event => {
             const data = JSON.parse(event.data);
