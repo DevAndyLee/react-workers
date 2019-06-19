@@ -14,3 +14,11 @@ pipelines:
           - npm install
           - npm test
           - npm run build
+          - apt-get update
+          - wget -O /tmp/cf-cli.tgz “https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.45.0" #current version of cli is 6.45.0
+          - ls -alF /tmp/
+          - mkdir -p /usr/local/bin
+          - tar -xzf /tmp/cf-cli.tgz -C /usr/local/bin
+          - cf — version
+          - cf login -a https://api.run.pivotal.io -u $PIVOTAL_USERNAME -p $PIVOTAL_PASSWORD
+          - cf push react-workers
