@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from './reducer';
 
-const Home = props => {
+export const Home = props => {
     const { clickCount, clickButton } = props;
     return (
         <div>
