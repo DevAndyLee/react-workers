@@ -10,7 +10,7 @@
 
 # production
 /build
-/public/*web-worker.js*
+/public/worker
 
 # misc
 .DS_Store

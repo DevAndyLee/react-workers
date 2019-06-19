@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
   entry: './worker/worker.js',
   output: {
-    path: path.resolve(__dirname, '../public'),
+    path: path.resolve(__dirname, '../public/worker'),
     filename: 'web-worker.js'
   },
   target: 'webworker',

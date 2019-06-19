@@ -1,4 +1,4 @@
-const WEB_WORKER_PATH = 'web-worker.js';
+const WEB_WORKER_PATH = 'worker/web-worker.js';
 
 let worker = null;
 

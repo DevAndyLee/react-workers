@@ -9,7 +9,7 @@
     "start": "run-p start:server start:workers start:react",
     "build:worker": "webpack --config worker/webpack.config.js",
     "build:react": "react-scripts build",
-    "build": "num run build:worker && npm run build:react",
+    "build": "npm run build:worker && npm run build:react",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
