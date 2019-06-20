@@ -14,7 +14,7 @@ export default class BackEnd {
         this.interval = setInterval(() => this.sendTick(), 1000);
 
         const scheme = location.protocol === "https:" ? "wss" : "ws";
-        const port = location.port ? (":" + location.port) : "";
+        const port = scheme === "wss" ? ':4443' : (location.port ? (":" + location.port) : "");
         const url = `${scheme}://${location.hostname}${port}/api/random`;
 
         this.socket = new WebSocket(url);
