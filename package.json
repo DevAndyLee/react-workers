@@ -6,7 +6,7 @@
     "start:react": "react-scripts start",
     "start:workers": "npm run build:worker -- --watch",
     "start:server": "node ./server/index.js",
-    "start": "run-p start:server start:workers start:react",
+    "start": "run-p start:workers start:react",
     "build:worker": "webpack --config worker/webpack.config.js",
     "build:react": "react-scripts build",
     "build": "npm run build:worker && npm run build:react",
