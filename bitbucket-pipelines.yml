@@ -17,6 +17,7 @@ pipelines:
           - npm run build
         artifacts:
           - build/**
+          - node_modules
     - step:
         name: Deploy
         script:
@@ -30,9 +31,6 @@ pipelines:
           - cf push react-workers
     - step:
         name: E2E Tests
-        caches:
-          - node
         image: selenium/standalone-chrome:3.141.59-oxygen
         script:
-          - npm install
-          - npm run e2e:results
+          - node_modules/.bin/jest -c e2e/jestConfig.json
