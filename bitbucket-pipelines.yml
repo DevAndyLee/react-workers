@@ -17,7 +17,6 @@ pipelines:
           - npm run build
         artifacts:
           - build/**
-          - node_modules/**
     - step:
         name: Deploy
         script:
@@ -32,5 +31,6 @@ pipelines:
     - step:
         name: E2E Tests
         script:
+          - npm install
           - npm run e2e-update
           - npm run e2e:ci
