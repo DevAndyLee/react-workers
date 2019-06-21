@@ -34,6 +34,6 @@ pipelines:
         image: selenium/standalone-chrome:3.141.59-oxygen
         script:
           - apt-get update
-          - apt-get install node
+          - apt-get install nodejs
           - npm install
           - npm run e2e:results
