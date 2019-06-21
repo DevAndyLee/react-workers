@@ -12,8 +12,7 @@ pipelines:
           - node
         script: # Modify the commands below to build your repository.
           - npm install
-          - set JEST_JUNIT_OUTPUT_DIR=test-reports
-          - npm test -- --reporters=default --reporters=jest-junit
+          - set JEST_JUNIT_OUTPUT_DIR=test-reports&&npm test -- --reporters=default --reporters=jest-junit
           - npm run build
           - apt-get update
           - wget -O /tmp/cf-cli.tgz "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.45.0" #current version of cli is 6.45.0
