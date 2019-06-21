@@ -10,8 +10,12 @@
     "build:worker": "webpack --config worker/webpack.config.js",
     "build:react": "react-scripts build",
     "build": "npm run build:worker && npm run build:react",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=node",
+    "eject": "react-scripts eject",
+    "e2e": "jest -c e2e/jestConfig.json",
+    "e2e-update": "webdriver-manager update --out_dir ../../e2e/selenium --versions.chrome=74.0.3729.169",
+    "e2e-start": "webdriver-manager start --out_dir ../../e2e/selenium --versions.chrome=74.0.3729.169 --detach",
+    "e2e-stop": "webdriver-manager shutdown"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -50,13 +54,17 @@
     "ws": "^7.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.15",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "http-proxy-middleware": "^0.19.1",
+    "jest": "^24.7.1",
     "jest-enzyme": "^7.0.2",
     "jest-junit": "^6.4.0",
     "npm-run-all": "^4.1.5",
     "react-test-renderer": "^16.8.6",
+    "selenium-webdriver": "^4.0.0-alpha.3",
+    "webdriver-manager": "^12.1.5",
     "webpack-cli": "^3.3.4"
   }
 }

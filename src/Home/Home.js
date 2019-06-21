@@ -8,10 +8,10 @@ export const Home = props => {
     return (
         <div>
             <h2>Home</h2>
-            <p>
+            <p className="message">
                 I have been clicked {clickCount} times
             </p>
-            <button onClick={clickButton}>Click Me</button>
+            <button className="counterButton" onClick={clickButton}>Click Me</button>
         </div>
     );
 };
