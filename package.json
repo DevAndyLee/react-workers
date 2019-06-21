@@ -13,10 +13,11 @@
     "test": "react-scripts test --env=node",
     "eject": "react-scripts eject",
     "e2e": "jest -c e2e/jestConfig.json",
+    "e2e:results": "npm run e2e -- --reporters=default --reporters=jest-junit",
     "e2e-update": "webdriver-manager update --out_dir ../../e2e/selenium --versions.chrome=74.0.3729.169",
     "e2e-start": "webdriver-manager start --out_dir ../../e2e/selenium --versions.chrome=74.0.3729.169",
     "e2e-stop": "webdriver-manager shutdown",
-    "e2e:ci": "run-p -r e2e-start e2e"
+    "e2e:ci": "run-p -r e2e-start e2e:results"
   },
   "eslintConfig": {
     "extends": "react-app"
