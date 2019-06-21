@@ -21,11 +21,9 @@ pipelines:
     - step:
         name: Deploy
         script:
+          - wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -
           - apt-get update
-          - wget -O /tmp/cf-cli.tgz "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.45.0"
-          - ls -alF /tmp/
-          - mkdir -p /usr/local/bin
-          - tar -xzf /tmp/cf-cli.tgz -C /usr/local/bin
+          - apt-get install cf-cli
           - cf --version
           - cf login -a https://api.run.pivotal.io -u $PIVOTAL_USERNAME -p $PIVOTAL_PASSWORD
           - cf push react-workers
@@ -33,7 +31,7 @@ pipelines:
         name: E2E Tests
         image: selenium/standalone-chrome:3.141.59-oxygen
         script:
-          - apt-get update
-          - apt-get install nodejs
+          - sudo apt-get update
+          - sudo apt-get install nodejs
           - npm install
           - npm run e2e:results
