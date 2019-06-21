@@ -9,6 +9,8 @@ export const driver = new Builder()
 export const root = () => driver.findElement({ css: '#root' });
 
 const baseUrl = process.env.E2E_BASE_URL || __baseUrl__;
+console.log(`Running E2E tests on website: ${baseUrl}`);
+
 export const load = async () => {
     await driver.get(`${baseUrl}${baseUrl[baseUrl.length - 1] === '/' ? '' : '/'}`);
     await driver.wait(until.elementLocated(root), defaultTimeout);
