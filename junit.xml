@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" time="7.215">
+  <testsuite name="app" errors="0" failures="0" skipped="0" timestamp="2019-06-21T14:52:42" time="6.073" tests="3">
+    <testcase classname="app should show the right header" name="app should show the right header" time="3.774">
+    </testcase>
+    <testcase classname="app should show no clicks" name="app should show no clicks" time="0.091">
+    </testcase>
+    <testcase classname="app clicked button should show one click" name="app clicked button should show one click" time="0.146">
+    </testcase>
+  </testsuite>
+</testsuites>

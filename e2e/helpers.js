@@ -1,9 +1,10 @@
 import { until } from 'selenium-webdriver';
 import { Builder } from 'selenium-webdriver';
 
+const seleniumHub = 'http://localhost:4444';
 export const driver = new Builder()
   .forBrowser('chrome')
-  .usingServer('http://localhost:4444/wd/hub')
+  .usingServer(`${seleniumHub}/wd/hub`)
   .build();
 
 export const root = () => driver.findElement({ css: '#root' });
