@@ -19,7 +19,7 @@ describe('app', () => {
       await counterButton().click();
     });
 
-    it('should show no clicks', async () => {
+    it('should show one click', async () => {
       expect(await message().getText()).toBe('I have been clicked 1 times');
     });
   });
