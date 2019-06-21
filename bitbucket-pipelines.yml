@@ -22,3 +22,5 @@ pipelines:
           - cf --version
           - cf login -a https://api.run.pivotal.io -u $PIVOTAL_USERNAME -p $PIVOTAL_PASSWORD
           - cf push react-workers
+        after-script:
+          - ls test-reports
