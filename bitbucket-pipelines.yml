@@ -8,19 +8,21 @@ image: node:10.15.3
 pipelines:
   default:
     - step:
+        name: Test and Build
         caches:
           - node
-        script: # Modify the commands below to build your repository.
+        script:
           - npm install
-          - set JEST_JUNIT_OUTPUT_DIR=test-reports&&npm test -- --reporters=default --reporters=jest-junit
+          - npm test -- --reporters=default --reporters=jest-junit
           - npm run build
+    - step:
+        name: Deploy
+        script:
           - apt-get update
-          - wget -O /tmp/cf-cli.tgz "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.45.0" #current version of cli is 6.45.0
+          - wget -O /tmp/cf-cli.tgz "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.45.0"
           - ls -alF /tmp/
           - mkdir -p /usr/local/bin
           - tar -xzf /tmp/cf-cli.tgz -C /usr/local/bin
           - cf --version
           - cf login -a https://api.run.pivotal.io -u $PIVOTAL_USERNAME -p $PIVOTAL_PASSWORD
           - cf push react-workers
-        after-script:
-          - ls test-reports
