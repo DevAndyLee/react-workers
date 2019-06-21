@@ -19,7 +19,7 @@ const Stream = (props) => {
 
             <input value={worker} onChange={evt => setWorker(evt.target.value)} />
 
-            <p>{streaming ? 'Currently streaming' : 'Not streaming'}</p>
+            <p>{streaming ? 'Currently streaming' : 'Not currently streaming'}</p>
 
             {streaming
                 ? <button onClick={onAction('stop')}>Stop</button>

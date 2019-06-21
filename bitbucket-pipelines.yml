@@ -16,7 +16,7 @@ pipelines:
           - npm test -- --reporters=default --reporters=jest-junit
           - npm run build
         artifacts:
-          - public/**
+          - build/**
     - step:
         name: Deploy
         script:
