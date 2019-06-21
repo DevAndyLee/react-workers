@@ -33,4 +33,4 @@ pipelines:
         name: E2E Tests
         image: selenium/standalone-chrome:3.141.59-oxygen
         script:
-          - node_modules/.bin/jest -c e2e/jestConfig.json
+          - ./node_modules/.bin/jest -c e2e/jestConfig.json
