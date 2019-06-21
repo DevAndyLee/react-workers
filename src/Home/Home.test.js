@@ -4,5 +4,5 @@ import {Home} from './Home';
 
 it('renders without crashing', () => {
   const wrapper = shallow(<Home />);
-  expect(wrapper).toContainReact(<h2>Home</h2>);
+  expect(wrapper).toContainReact(<h2>Homer</h2>);
 });
